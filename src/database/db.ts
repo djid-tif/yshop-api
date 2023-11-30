@@ -1,6 +1,8 @@
 import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const sequelize = new Sequelize('yshop-db', 'ceuudjjzqjdmotm55ihw', 'pscale_pw_50iqcYKWqMKXARpauCYSM6PIZTcilqilSGKGrGViFY1', {
+const sequelize = new Sequelize(process.env.DB_NAME!, process.env.DB_USER!, process.env.DB_PASS, {
     host: 'eu-west.connect.psdb.cloud',
     dialect: 'mysql',
     dialectOptions: {
