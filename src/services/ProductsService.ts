@@ -11,12 +11,12 @@ export class ProductsService {
         return ProductsService.instance
     }
 
-     getAllProducts(): Product[] {
-        return readJsonFileSync();
+    async getAllProducts(): Promise<Product[]> {
+        return Product.findAll();
     }
 
-    getProductById(id: string): any {
-        return getById(id);
+    async getProductById(id: string): Promise<Product | null> {
+        return Product.findByPk(id);
     }
 
     createProduct(product: any): any {

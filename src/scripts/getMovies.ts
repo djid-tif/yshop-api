@@ -14,6 +14,6 @@ export function readJsonFileSync(): Product[] {
 
 
 export function getById(productId: string): Product | null {
-    const products = readJsonFileSync();
+    const products: Product[] = readJsonFileSync();
     return products.find(product => product.id.toString() === productId) || null;
 }

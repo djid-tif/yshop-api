@@ -1,17 +1,37 @@
-// model
-// {
-//     "id": 38,
-//     "title": "Cafetière 3",
-//     "description": "Cafetière haut de gamme pour les amateurs de café",
-//     "imageUrl": "https://source.unsplash.com/random/200x200?espresso",
-//     "price": "36.21 €"
-// },
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../database/db';
 
-
-export interface Product {
-    id: string;
-    title: string;
-    description: string;
-    imageUrl: string;
-    price: string;
+export class Product extends Model {
+    public id!: number;
+    public title!: string;
+    public description!: string;
+    public imageUrl!: string;
+    public price!: string;
 }
+
+Product.init({
+    id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    title: {
+        type: new DataTypes.STRING(128),
+        allowNull: false,
+    },
+    description: {
+        type: new DataTypes.STRING(255),
+        allowNull: true,
+    },
+    imageUrl: {
+        type: new DataTypes.STRING(255),
+        allowNull: true,
+    },
+    price: {
+        type: new DataTypes.STRING(128),
+        allowNull: false,
+    }
+}, {
+    tableName: 'products',
+    sequelize: sequelize
+});
