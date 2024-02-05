@@ -1,4 +1,4 @@
-import {getById, readJsonFileSync} from "../scripts/getMovies";
+import {getById, readJsonFileSync} from "../../scripts/getProducts";
 import {Product} from "../models/ProductModel";
 
 export class ProductsService {

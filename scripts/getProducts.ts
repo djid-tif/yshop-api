@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {Product} from "../models/ProductModel";
+import {Product} from "../src/models/ProductModel";
 
 
 export function readJsonFileSync(): Product[] {

@@ -7,6 +7,10 @@ export class Product extends Model {
     public description!: string;
     public imageUrl!: string;
     public price!: string;
+    public accessibility!: number;
+    public freestyle!:  number;
+    public poudre!: number
+    public piste!: number ;
 }
 
 Product.init({
@@ -20,7 +24,7 @@ Product.init({
         allowNull: false,
     },
     description: {
-        type: new DataTypes.STRING(255),
+        type: new DataTypes.TEXT(),
         allowNull: true,
     },
     imageUrl: {
@@ -30,7 +34,24 @@ Product.init({
     price: {
         type: new DataTypes.STRING(128),
         allowNull: false,
-    }
+    },
+    accessibility: {
+        type: new DataTypes.INTEGER(),
+        allowNull: false,
+    },
+    freestyle: {
+        type: new DataTypes.INTEGER(),
+        allowNull: false,
+    },
+    poudre: {
+        type: new DataTypes.INTEGER(),
+        allowNull: false,
+    },
+    piste: {
+        type: new DataTypes.INTEGER(),
+        allowNull: false,
+    },
+
 }, {
     tableName: 'products',
     sequelize: sequelize

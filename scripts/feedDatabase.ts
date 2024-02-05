@@ -1,6 +1,6 @@
-import { Product } from '../models/ProductModel';
+import { Product } from '../src/models/ProductModel';
 import * as fs from 'fs';
-import {readJsonFileSync} from "./getMovies";
+import {readJsonFileSync} from "./getProducts";
 
 async function feedDatabase() {
     try {
