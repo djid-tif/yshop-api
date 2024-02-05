@@ -20,7 +20,7 @@ export class OrdersService {
 
     async createOrder(orderData: CreateOrderData): Promise<Order> {
         return await Order.create({
-            userId: orderData.userId,
+            itemIds: orderData.item_ids,
             total: orderData.total,
             status: orderData.status || 'en attente',
         });
@@ -30,7 +30,7 @@ export class OrdersService {
 
 
 interface CreateOrderData {
-    userId: number;
+    item_ids: number[];
     total: number;
     status?: string; // Status est optionnel, vous pouvez définir une valeur par défaut
 }
